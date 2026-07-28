@@ -1,0 +1,19 @@
+POST-READ NOTES · RAG: THE PHYSICS BOOK AND THE INDEX PAGE
+
+Nobody answers a physics question by re-reading the whole textbook. You go to the index,
+find the three pages that matter, and read those. Retrieval-augmented generation is that
+habit, mechanized: keep a corpus far bigger than any context window, and at query time
+select the small slice the question actually needs.
+
+The three letters happen in order. Retrieval: find the relevant chunks. Augmentation:
+place them into the prompt alongside the question. Generation: let the model write an
+answer grounded in what it was handed. The context window ceiling is an augmentation
+problem, never a corpus problem — you never shrink the corpus to fit the window; you
+improve what you select from it.
+
+Chunking is the art of cutting the corpus into retrievable pieces, and it is only easy
+when the data has a natural seam — a calendar, a chapter boundary, a section heading.
+The index is metadata about each chunk: which document, which topic, which dates, so
+that cheap filters can eliminate most of the corpus before anything expensive runs.
+When a question can be answered by filtering on those fields, no embeddings are needed
+at all — that path is a list comprehension, and it should always be built first.

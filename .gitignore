@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+module1_weather/chunks/
+module1_weather/index.json
+.DS_Store

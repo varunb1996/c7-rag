@@ -1,0 +1,19 @@
+POST-READ NOTES · WHY MODELS MAKE THINGS UP, AND THE HONEST MISS
+
+A language model never retrieves a fact; it continues a pattern. When the true answer is
+missing from its context, the most statistically plausible continuation is often a
+confident, fluent, wrong one. This is hallucination, and it is not a bug in one vendor's
+model — it is what pattern-completion does when you mistake it for lookup.
+
+Retrieval makes this sharper, not softer, in one specific way: a retriever always
+returns *something*. Cosine similarity finds the nearest chunks that exist, even when no
+chunk actually contains the answer. Similarity is not correctness. Hand the model
+near-miss context without guardrails and it will helpfully synthesize an answer from it
+— hallucination with citations, the most convincing wrong answer money can buy.
+
+The first defense costs one sentence in the system prompt: answer only from the
+context, and if the answer is not there, say so. A response that admits the context
+lacks the answer is called an honest miss, and honest misses are treasure: logged over
+time, they are precisely the list of documents your corpus is missing. The deeper
+defense is measurement — golden pairs of question and expected behaviour, scored on
+every change, so that quality becomes a number you watch instead of a feeling you have.

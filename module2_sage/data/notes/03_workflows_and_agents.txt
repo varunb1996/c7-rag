@@ -1,0 +1,19 @@
+POST-READ NOTES · WORKFLOWS AND AGENTS: AUTOMATING REAL WORK
+
+This is the session where the course turns toward automating your actual job — the
+repetitive, rule-describable parts of it. The ladder has three rungs. A prompt automates
+a sentence of work. A workflow automates a process: a fixed sequence of steps — fetch,
+transform, decide, send — where the LLM fills in the judgement-shaped holes and
+deterministic nodes do everything else. An agent automates a goal: you hand it tools and
+an objective, and it loops — plan, act, observe — deciding for itself which step comes
+next.
+
+The order of learning matters. In this cohort, workflows and agent patterns arrive
+after tool calling and retrieval, because an agent is nothing more than a tool-calling
+loop with the stopping condition moved inside the model. If you can read a tool-calling
+transcript, you can already read an agent's mind.
+
+The honest advice from the session: most jobs are automated by boring workflows, not
+glamorous agents. Inventory the tasks you do weekly, mark the ones with clear inputs and
+outputs, and build the dumbest workflow that removes one of them. Agents earn their
+complexity only when the path genuinely cannot be fixed in advance.

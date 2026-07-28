@@ -1,0 +1,5 @@
+groq>=0.9
+requests>=2.31
+numpy>=1.26
+sentence-transformers>=2.7
+tiktoken>=0.7

@@ -1,0 +1,14 @@
+[
+  {"week": 1, "date": "2026-06-16", "title": "Cohort Kickoff & Orientation", "type": "session", "track": "both", "topics": ["logistics"]},
+  {"week": 1, "date": "2026-06-19", "title": "Prompting from First Principles", "type": "lecture", "track": "both", "topics": ["prompting"]},
+  {"week": 2, "date": "2026-06-23", "title": "Context Windows & Tokens", "type": "lecture", "track": "both", "topics": ["context", "tokens"]},
+  {"week": 2, "date": "2026-06-26", "title": "Prompting Practical", "type": "practical", "track": "code", "topics": ["prompting"]},
+  {"week": 3, "date": "2026-06-30", "title": "Tool Calling: The Three Layers", "type": "lecture", "track": "both", "topics": ["tool-calling"]},
+  {"week": 3, "date": "2026-07-03", "title": "Build the Weather App", "type": "practical", "track": "code", "topics": ["tool-calling"]},
+  {"week": 3, "date": "2026-07-03", "title": "Weather Workflow in n8n", "type": "practical", "track": "no-code", "topics": ["tool-calling"]},
+  {"week": 4, "date": "2026-07-07", "title": "LLM Deep Dive: RAG Theory", "type": "lecture", "track": "both", "topics": ["rag"]},
+  {"week": 4, "date": "2026-07-10", "title": "Now Build the RAG", "type": "practical", "track": "code", "topics": ["rag"]},
+  {"week": 4, "date": "2026-07-10", "title": "RAG in n8n", "type": "practical", "track": "no-code", "topics": ["rag"]},
+  {"week": 5, "date": "2026-07-14", "title": "Advanced RAG: Case Studies", "type": "lecture", "track": "both", "topics": ["rag"]},
+  {"week": 6, "date": "2026-07-21", "title": "Evals: Measuring Your System", "type": "lecture", "track": "both", "topics": ["evals"]}
+]

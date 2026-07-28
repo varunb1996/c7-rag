@@ -1,0 +1,20 @@
+POST-READ NOTES · EMBEDDINGS: MEANING AS GEOMETRY
+
+Some questions have no clean filter. "Something about my bill looks wrong" names no
+field, no date, no category — it names a meaning. Embeddings are the tool for that
+residue. An embedding model maps a piece of text to a list of numbers — a vector —
+such that texts with similar meaning land near each other. That is the entire idea:
+meaning becomes geometry, and "find related text" becomes "find nearby points".
+
+The vectors are unglamorous. A small local model produces 384 floats per text; a large
+hosted one produces 3,072. More dimensions give the space more ways to distinguish
+meanings, but the object is the same list of numbers, and you can print it.
+
+Similarity is measured by the angle between vectors: cosine similarity, 1.0 for
+identical directions, near 0 for unrelated ones. If you normalize every vector to
+length one first, the cosine collapses into a plain dot product — one multiply-add per
+dimension. Searching a corpus is then a single matrix-vector multiplication: score
+every chunk, sort, take the top k. For a corpus of hundreds or thousands of chunks,
+that matrix sitting in memory IS your vector database. The managed products earn their
+place when the matrix outgrows RAM or needs many concurrent writers — at that boundary,
+not before.

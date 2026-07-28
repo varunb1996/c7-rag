@@ -1,0 +1,19 @@
+POST-READ NOTES · TOOL CALLING: THE THREE LAYERS
+
+The model cannot touch the world. It cannot fetch a URL, read a file, or query a
+database. Tool calling is the pattern that pretends otherwise, and it has exactly three
+layers. Layer one: the model, which only ever emits text — including, when you hand it a
+tool schema, a structured request saying "please run this function with these
+arguments". Layer two: the execution environment — your Python process, your n8n
+workflow — which actually runs the function. Layer three: the tools themselves, ordinary
+code with a JSON description stapled on.
+
+The loop is the whole trick. You send the conversation plus tool schemas; the model
+either answers or asks for a tool; if it asks, you execute, append the result as a tool
+message, and go around again. The model decides *when* a tool is needed; you decide
+*what actually happens*. Keep that split sacred: arithmetic, lookups, and side effects
+belong in the deterministic layer, judgement belongs in the model.
+
+A tool's description is load-bearing prose. The model chooses tools by reading it, so a
+vague description produces a model that never calls your function, and an overbroad one
+produces a model that calls it for everything.

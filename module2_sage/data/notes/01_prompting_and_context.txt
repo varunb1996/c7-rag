@@ -1,0 +1,18 @@
+POST-READ NOTES · PROMPTING FROM FIRST PRINCIPLES
+
+A language model is a next-token predictor wearing a chat interface. Everything you
+control about its behaviour travels through one channel: the context you send. The
+system prompt sets the standing rules of the conversation; the user messages carry the
+task; and the model's own previous replies are fed back in, which is the only reason it
+appears to "remember" anything.
+
+The context window is a hard budget measured in tokens, not characters. A token is
+roughly three-quarters of an English word, and every model has a fixed ceiling —
+8K, 128K, a million — beyond which the API refuses the request outright. It does not
+degrade gracefully; it errors. This is why serious prompt work starts with counting:
+if you cannot say how many tokens your payload is, you cannot predict when it dies.
+
+Practical rules from the session: put stable instructions in the system prompt, keep
+them short and testable, and state the output format explicitly. A prompt is not an
+incantation; it is an interface contract, and like any contract it should be versioned,
+diffed, and measured against examples rather than rewritten on vibes.
